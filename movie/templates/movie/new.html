@@ -1,0 +1,39 @@
+{% extends 'movie/base.html' %}
+
+
+{% block bb %}
+<div>
+    <form action="/movies/create/" class="text-align:center;" method="post">
+        {% csrf_token %}
+        <h1>새로운 영화의 내용을 적어주세요</h1>    
+        영화제목 : <input type="text" name="title"/>
+        <br>
+        <br>
+        영화영문제목 : <input type="text" name="title_en"/>
+        <br>
+        <br>
+        관객수 : <input type="text" name="audience"/>
+        <br>
+        <br>
+        개봉일 : <input type="date" name="open_date"/>
+        <br>
+        <br>
+        장르 : <input type="text" name="genre"/>
+        <br>
+        <br>
+        관람등급 : <input type="text" name="watch_grade"/>
+        <br>
+        <br>
+        평점 : <input type="float" name="score"/>
+        <br>
+        <br>
+        포스터url : <input type="text" name="poster_url"/>
+        <br>
+        <br>
+        설명 : <textarea rows="4" cols="50" name="description"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Form Submit"/>
+    </form>
+</div>
+{% endblock %}
